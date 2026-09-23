@@ -1,0 +1,1542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Kanishkaaa 👀🌸</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap');
+
+:root{
+  --bg:#050505;
+  --card:#101010;
+  --line:#29222f;
+  --lilac:#c8a8ff;
+  --pink:#ff8fc7;
+  --gold:#ffd477;
+  --muted:#aaa1ae;
+  --white:#f8f5fa;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html,body{
+  margin:0;
+  min-height:100%;
+  background:var(--bg);
+  color:var(--white);
+  font-family:"DM Sans",sans-serif;
+}
+
+body{
+  overflow-x:hidden;
+}
+
+.bg{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:0;
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(200,168,255,.11),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(255,143,199,.08),
+      transparent 30%
+    );
+}
+
+.glow{
+  position:absolute;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:.22;
+}
+
+.g1{
+  background:#b78cff;
+  left:-80px;
+  top:20%;
+}
+
+.g2{
+  background:#ff7dbd;
+  right:-90px;
+  bottom:10%;
+}
+
+.app{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  margin:auto;
+  padding:22px 16px 50px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.brand{
+  font-size:11px;
+  letter-spacing:2px;
+  color:var(--muted);
+  text-transform:uppercase;
+}
+
+.progress{
+  display:flex;
+  gap:6px;
+}
+
+.dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#2b2730;
+  transition:.3s;
+}
+
+.dot.active{
+  background:var(--lilac);
+  box-shadow:0 0 12px rgba(200,168,255,.7);
+}
+
+.page{
+  display:none;
+  min-height:calc(100vh - 110px);
+  align-items:center;
+  justify-content:center;
+}
+
+.page.active{
+  display:flex;
+  animation:pageIn .55s ease;
+}
+
+@keyframes pageIn{
+  from{
+    opacity:0;
+    transform:translateY(15px);
+  }
+
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+.card{
+  width:100%;
+  background:rgba(16,16,16,.84);
+  border:1px solid var(--line);
+  border-radius:28px;
+  padding:30px 22px;
+  box-shadow:0 25px 80px rgba(0,0,0,.45);
+  backdrop-filter:blur(14px);
+  position:relative;
+  overflow:hidden;
+}
+
+.card:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      120deg,
+      rgba(255,255,255,.035),
+      transparent 35%,
+      rgba(200,168,255,.025)
+    );
+}
+
+.eyebrow{
+  color:var(--lilac);
+  font-size:12px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+  text-align:center;
+  margin-bottom:9px;
+}
+
+h1,h2{
+  font-family:"Playfair Display",serif;
+  font-weight:500;
+  margin:0;
+  text-align:center;
+}
+
+h1{
+  font-size:clamp(34px,8vw,62px);
+  line-height:1.05;
+}
+
+h2{
+  font-size:clamp(28px,6vw,42px);
+}
+
+.sub{
+  text-align:center;
+  color:var(--muted);
+  max-width:550px;
+  margin:14px auto 25px;
+  line-height:1.7;
+  font-size:14px;
+}
+
+.lily-row{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  margin:12px 0 22px;
+}
+
+.mini-lily{
+  font-size:25px;
+  filter:drop-shadow(
+    0 0 8px rgba(200,168,255,.25)
+  );
+
+  animation:float 3s ease-in-out infinite;
+}
+
+.mini-lily:nth-child(2){
+  animation-delay:.4s;
+}
+
+.mini-lily:nth-child(3){
+  animation-delay:.8s;
+}
+
+@keyframes float{
+  50%{
+    transform:translateY(-5px) rotate(3deg);
+  }
+}
+
+.panel{
+  border:1px solid var(--line);
+  background:#0b0b0c;
+  border-radius:22px;
+  padding:18px;
+  margin-top:20px;
+}
+
+.hint{
+  text-align:center;
+  color:#908694;
+  font-size:12px;
+  margin:0 0 14px;
+}
+
+.flowers{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:11px;
+  max-width:520px;
+  margin:auto;
+}
+
+.flower{
+  aspect-ratio:1;
+  border:1px solid #2b2430;
+  border-radius:18px;
+  background:
+    linear-gradient(
+      145deg,
+      #17131b,
+      #0c0c0e
+    );
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+
+  transition:
+    .22s transform,
+    .22s border-color,
+    .22s box-shadow;
+}
+
+.flower:hover{
+  transform:translateY(-3px);
+  border-color:#665377;
+}
+
+.flower .petal{
+  font-size:30px;
+  transition:.25s;
+
+  filter:drop-shadow(
+    0 0 9px rgba(255,143,199,.18)
+  );
+}
+
+.flower .digit{
+  position:absolute;
+  font-size:22px;
+  font-weight:600;
+  color:var(--gold);
+
+  opacity:0;
+  transform:scale(.5);
+
+  transition:.25s;
+}
+
+.flower.revealed .petal{
+  opacity:.12;
+  transform:scale(.7);
+}
+
+.flower.revealed .digit{
+  opacity:1;
+  transform:scale(1);
+}
+
+.flower.good{
+  border-color:#a9e6bc;
+
+  box-shadow:
+    0 0 20px rgba(169,230,188,.12);
+}
+
+.flower.bad{
+  animation:shake .3s;
+  border-color:#d97b9d;
+}
+
+@keyframes shake{
+  25%{
+    transform:translateX(-5px);
+  }
+
+  75%{
+    transform:translateX(5px);
+  }
+}
+
+.codebox{
+  display:flex;
+  justify-content:center;
+  gap:8px;
+  margin:18px 0;
+}
+
+.slot{
+  width:43px;
+  height:48px;
+
+  border:1px solid #332b38;
+  border-radius:12px;
+
+  background:#0a0a0b;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:var(--gold);
+
+  font-weight:600;
+  font-size:20px;
+}
+
+.status{
+  text-align:center;
+  color:#8f8792;
+  font-size:12px;
+  min-height:18px;
+}
+
+.btn{
+  display:block;
+  margin:20px auto 0;
+
+  border:1px solid #5b4b6b;
+  background:#17121d;
+  color:#fff;
+
+  border-radius:999px;
+  padding:12px 19px;
+
+  font:inherit;
+  cursor:pointer;
+
+  transition:.2s;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  background:#21192b;
+  border-color:#8c72a7;
+}
+
+.message{
+  max-width:590px;
+  margin:25px auto 0;
+
+  border-left:2px solid var(--lilac);
+
+  padding:6px 0 6px 18px;
+
+  color:#ddd6df;
+
+  line-height:1.85;
+  font-size:15px;
+}
+
+.message .name{
+  color:var(--pink);
+  font-weight:600;
+}
+
+.signature{
+  text-align:center;
+  color:#8f8792;
+  margin-top:22px;
+  font-size:13px;
+}
+
+.choice-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+
+  max-width:500px;
+  margin:18px auto;
+}
+
+.petal-btn{
+  height:72px;
+
+  border:1px solid #2c2631;
+  border-radius:18px;
+
+  background:#0b0b0d;
+  color:#bcb2c3;
+
+  cursor:pointer;
+
+  font-size:25px;
+
+  transition:.2s;
+}
+
+.petal-btn:hover{
+  border-color:#725b83;
+  transform:translateY(-2px);
+}
+
+.petal-btn.selected{
+  border-color:var(--gold);
+
+  box-shadow:
+    0 0 20px rgba(255,212,119,.08);
+
+  color:var(--gold);
+}
+
+.final-flower{
+  font-size:68px;
+  text-align:center;
+  margin:12px 0;
+
+  filter:
+    drop-shadow(
+      0 0 20px rgba(200,168,255,.28)
+    );
+
+  animation:float 3s ease-in-out infinite;
+}
+
+.final-text{
+  font-family:"Playfair Display",serif;
+
+  font-size:
+    clamp(23px,5vw,34px);
+
+  line-height:1.45;
+
+  text-align:center;
+
+  margin:18px auto;
+
+  max-width:600px;
+}
+
+.footer{
+  text-align:center;
+  color:#514b55;
+
+  font-size:10px;
+
+  margin-top:20px;
+
+  letter-spacing:1px;
+}
+
+
+/* FINAL LILY PUZZLE */
+
+.final-lily-box{
+  height:150px;
+  position:relative;
+  overflow:hidden;
+
+  border-radius:18px;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(200,168,255,.08),
+      #080808 65%
+    );
+
+  border:1px solid #302637;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.final-lily{
+  font-size:58px;
+  cursor:pointer;
+
+  display:inline-block;
+
+  padding:18px;
+
+  user-select:none;
+
+  filter:
+    drop-shadow(
+      0 0 18px rgba(255,143,199,.35)
+    );
+
+  animation:
+    finalLilyFloat 2.5s ease-in-out infinite;
+
+  transition:.25s;
+}
+
+.final-lily:hover{
+  transform:scale(1.12);
+  filter:
+    drop-shadow(
+      0 0 28px rgba(200,168,255,.55)
+    );
+}
+
+.final-lily:active{
+  transform:scale(.9);
+}
+
+@keyframes finalLilyFloat{
+
+  0%,100%{
+    transform:translateY(0);
+  }
+
+  50%{
+    transform:translateY(-8px);
+  }
+
+}
+
+
+@media(max-width:520px){
+
+  .card{
+    padding:26px 14px;
+    border-radius:23px;
+  }
+
+  .flowers{
+    gap:8px;
+  }
+
+  .flower{
+    border-radius:14px;
+  }
+
+  .flower .petal{
+    font-size:25px;
+  }
+
+  .choice-grid{
+    gap:8px;
+  }
+
+  .petal-btn{
+    height:64px;
+  }
+
+  .final-lily{
+    font-size:52px;
+  }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="bg">
+
+  <div class="glow g1"></div>
+  <div class="glow g2"></div>
+
+</div>
+
+
+<div class="app">
+
+
+<!-- ========================= -->
+<!-- TOP BAR -->
+<!-- ========================= -->
+
+<div class="topbar">
+
+  <div class="brand">
+    ek chhoti si cheez 👀
+  </div>
+
+  <div class="progress">
+
+    <span class="dot active"></span>
+
+    <span class="dot"></span>
+
+    <span class="dot"></span>
+
+  </div>
+
+</div>
+
+
+
+<!-- ========================= -->
+<!-- PAGE 1 -->
+<!-- ========================= -->
+
+<section
+  class="page active"
+  id="page1"
+>
+
+<div class="card">
+
+
+  <div class="eyebrow">
+    okay madam, entry test 😭
+  </div>
+
+
+  <h1>
+    heyyy kanishkaaaa 👀
+  </h1>
+
+
+  <div class="lily-row">
+
+    <span class="mini-lily">
+      🌸
+    </span>
+
+    <span class="mini-lily">
+      🌸
+    </span>
+
+    <span class="mini-lily">
+      🌸
+    </span>
+
+  </div>
+
+
+  <p class="sub">
+
+    Sooo ek chhoti si website banayi hai
+    aapke liye...
+
+    <br><br>
+
+    Lekin obviously seedha andar thodi
+    jaane dunga 😂
+
+    <br>
+
+    Pehle ek mini sa puzzle solve karo.
+
+  </p>
+
+
+  <div class="panel">
+
+
+    <p class="hint">
+
+      Bas in lilies ke peeche chhupe
+      numbers dhoondo...
+
+      <br>
+
+      Aur jo sequence ban raha hai
+      usko complete karo 👀
+
+    </p>
+
+
+    <div class="codebox">
+
+      <div
+        class="slot"
+        id="s0"
+      >
+        •
+      </div>
+
+      <div
+        class="slot"
+        id="s1"
+      >
+        •
+      </div>
+
+      <div
+        class="slot"
+        id="s2"
+      >
+        •
+      </div>
+
+      <div
+        class="slot"
+        id="s3"
+      >
+        •
+      </div>
+
+    </div>
+
+
+    <div
+      class="flowers"
+      id="flowers"
+    ></div>
+
+
+    <div
+      class="status"
+      id="status"
+    >
+
+      lilies ke peeche numbers
+      chhupe hain...
+
+      dhoondo zara 👀
+
+    </div>
+
+  </div>
+
+
+  <p class="footer">
+
+    galat number hua toh lily ko
+    blame kar dena 😭
+
+  </p>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- PAGE 2 -->
+<!-- ========================= -->
+
+<section
+  class="page"
+  id="page2"
+>
+
+<div class="card">
+
+
+  <div class="eyebrow">
+    ohhh puzzle solve ho gaya 👀
+  </div>
+
+
+  <h2>
+    Ab ek aur chhota sa kaam 😭
+  </h2>
+
+
+  <p class="sub">
+
+    Ye bhi easy hai bhai...
+
+    <br>
+
+    matlab hopefully 😂
+
+    <br><br>
+
+    Bas lilies ko is order mein
+    tap karo:
+
+    <br><br>
+
+    <b>
+      🌙 → ✦ → ♡ → 🌸
+    </b>
+
+  </p>
+
+
+  <div
+    class="choice-grid"
+    id="sequence"
+  >
+
+    <button
+      class="petal-btn"
+      data-symbol="🌙"
+    >
+      🌙
+    </button>
+
+
+    <button
+      class="petal-btn"
+      data-symbol="✦"
+    >
+      ✦
+    </button>
+
+
+    <button
+      class="petal-btn"
+      data-symbol="♡"
+    >
+      ♡
+    </button>
+
+
+    <button
+      class="petal-btn"
+      data-symbol="🌸"
+    >
+      🌸
+    </button>
+
+  </div>
+
+
+  <p
+    class="status"
+    id="seqStatus"
+  >
+
+    bas 4 taps...
+
+    <br>
+
+    zyada mehnat nahi karwa raha 😂
+
+  </p>
+
+
+
+  <!-- MESSAGE -->
+
+  <div
+    id="page2msg"
+    style="display:none;"
+  >
+
+
+    <div class="message">
+
+
+      <span class="name">
+        Hiiiieee Kanishkaa 🌸
+      </span>
+
+
+      <br><br>
+
+
+      I know hum bohot randomly
+      Snap pe mile the...
+
+      aur jaise hi maine aapko dekha na,
+      mujhe aap genuinely cute lagi 😭😂
+
+
+      <br><br>
+
+
+      Toh bas socha thoda sa effort
+      kar hi leta hoon...
+
+      normal "hey" bhejne se thoda
+      zyada 😂
+
+
+      <br><br>
+
+
+      And honestly,
+      koi pressure-vressure nahi hai.
+
+      Mujhe bas ye bond continue karna hai
+      aur dekhna hai ki aage kya hota hai.
+
+
+      <br><br>
+
+
+      Haan replies aapke thode dry aate hain...
+
+      but koiii naa 😭😂
+
+      main adjust kar lunga,
+      pani pee lunga.
+
+
+      <br><br>
+
+
+      Bas mujhe aapse baat karna achha lagta hai
+      and I'd like to know you a little better.
+
+      Baaki jo bhi ho,
+      bilkul aapke comfort ke according. 🌷
+
+
+      <br><br>
+
+
+      No expectations,
+      no awkward pressure...
+
+      bas chill rehna hai
+      aur baat karte rehna hai. 🫶
+
+
+    </div>
+
+
+
+    <button
+      class="btn"
+      onclick="goTo(3)"
+    >
+
+      okayyy last page 👀 →
+
+    </button>
+
+
+  </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ========================= -->
+<!-- PAGE 3 -->
+<!-- ========================= -->
+
+<section
+  class="page"
+  id="page3"
+>
+
+<div class="card">
+
+
+  <div class="eyebrow">
+    final level unlocked 😭
+  </div>
+
+
+  <div class="final-flower">
+    🌸
+  </div>
+
+
+  <h2>
+
+    Heinnn so aa hi gye
+    lasttt page pe 😭
+
+  </h2>
+
+
+  <p class="sub">
+
+    Poddar University wale
+    badhiya haiii 👀😂
+
+    <br><br>
+
+    Ab last ek chhota sa kaam...
+
+    <br>
+
+    warna itni jaldi khatam
+    kaise hone du 😭
+
+  </p>
+
+
+
+  <div class="panel">
+
+
+    <p class="hint">
+
+      Is baar lily bilkul saamne hai 😂
+
+      <br>
+
+      Bas uspe tap karo
+      aur final message unlock ho jayega 🌸
+
+    </p>
+
+
+    <!-- VISIBLE LILY -->
+
+    <div
+      class="final-lily-box"
+      id="hiddenLily"
+    >
+
+      <span
+        class="final-lily"
+        id="targetLily"
+      >
+        🌸
+      </span>
+
+    </div>
+
+
+    <p
+      class="status"
+      id="finalStatus"
+    >
+
+      lily pe tap karo 👀🌸
+
+    </p>
+
+
+  </div>
+
+
+
+  <!-- FINAL MESSAGE -->
+
+  <div
+    id="finalMessage"
+    style="display:none;"
+  >
+
+
+    <div class="final-text">
+
+      This whole website
+      maine specially aapke liye banayi hai...
+
+      <br><br>
+
+      Bas thoda special feel karane ke liye
+      aur aapke face pe ek chhoti si
+      smile laane ke liyeee. 🫶🌸
+
+    </div>
+
+
+    <div
+      class="message"
+      style="border-left-color:var(--pink);"
+    >
+
+      Keep smilinggg,
+      Kanishkaaa. 🌷
+
+      <br>
+
+      Aur haan,
+      apna dhyaan rakhnaaa.
+
+      <br><br>
+
+      Baaki website pasand aayi ho
+      toh developer ko thoda credit
+      de dena 😭😂
+
+    </div>
+
+
+    <div class="signature">
+
+      — from someone who just wanted
+      to make you smile 🌸
+
+    </div>
+
+
+  </div>
+
+
+</div>
+
+</section>
+
+</div>
+
+
+
+<script>
+
+/* =========================================
+   PAGE 1 — DOB PUZZLE
+
+   PASSWORD = 2512
+========================================= */
+
+
+const digits = [
+  0,1,2,3,4,5,6,7,8,9
+];
+
+
+let code = "";
+
+let step = 0;
+
+
+const flowers =
+  document.getElementById(
+    "flowers"
+  );
+
+
+
+/* Shuffle numbers */
+
+function shuffle(array){
+
+  return [...array].sort(
+    () => Math.random() - 0.5
+  );
+
+}
+
+
+
+/* Create all 10 flowers */
+
+shuffle(digits).forEach(d => {
+
+
+  const el =
+    document.createElement(
+      "button"
+    );
+
+
+  el.className =
+    "flower";
+
+
+  el.innerHTML = `
+
+    <span class="petal">
+      🌸
+    </span>
+
+    <span class="digit">
+      ${d}
+    </span>
+
+  `;
+
+
+  el.dataset.digit = d;
+
+
+
+  el.onclick = () => {
+
+
+    /*
+      Password:
+
+      2 → 5 → 1 → 2
+
+      Same 2 can be used again.
+    */
+
+
+    const needed =
+      [2,5,1,2][step];
+
+
+
+    /* Correct number */
+
+    if(
+      Number(d) === needed
+    ){
+
+
+      el.classList.add(
+        "revealed",
+        "good"
+      );
+
+
+      code += d;
+
+
+      document.getElementById(
+        "s" + step
+      ).textContent = d;
+
+
+      step++;
+
+
+      document.getElementById(
+        "status"
+      ).textContent =
+
+        step === 4
+
+        ? "password completeee 😭🌸"
+
+        : "yesss... next number dhoondo 👀";
+
+
+
+      /* Unlock Page 2 */
+
+      if(step === 4){
+
+        setTimeout(
+          () => goTo(2),
+          650
+        );
+
+      }
+
+    }
+
+
+    /* Wrong number */
+
+    else{
+
+
+      el.classList.add(
+        "bad"
+      );
+
+
+      document.getElementById(
+        "status"
+      ).textContent =
+        "nahhh ye nahi hai 😂 doosra try karo";
+
+
+      setTimeout(
+        () => {
+
+          el.classList.remove(
+            "bad"
+          );
+
+        },
+        300
+      );
+
+    }
+
+  };
+
+
+  flowers.appendChild(
+    el
+  );
+
+});
+
+
+
+/* =========================================
+   PAGE SWITCH
+========================================= */
+
+function goTo(n){
+
+
+  document
+    .querySelectorAll(
+      ".page"
+    )
+    .forEach(
+      p =>
+        p.classList.remove(
+          "active"
+        )
+    );
+
+
+  document
+    .getElementById(
+      "page" + n
+    )
+    .classList.add(
+      "active"
+    );
+
+
+  document
+    .querySelectorAll(
+      ".dot"
+    )
+    .forEach(
+      (d,i) => {
+
+        d.classList.toggle(
+          "active",
+          i === n - 1
+        );
+
+      }
+    );
+
+
+  window.scrollTo({
+
+    top:0,
+
+    behavior:"smooth"
+
+  });
+
+}
+
+
+
+/* =========================================
+   PAGE 2 — SEQUENCE PUZZLE
+========================================= */
+
+
+const sequence = [
+
+  "🌙",
+
+  "✦",
+
+  "♡",
+
+  "🌸"
+
+];
+
+
+let seqIndex = 0;
+
+
+
+document
+  .querySelectorAll(
+    ".petal-btn"
+  )
+  .forEach(
+    btn => {
+
+
+      btn.onclick = () => {
+
+
+        const symbol =
+          btn.dataset.symbol;
+
+
+
+        /* Correct */
+
+        if(
+          symbol ===
+          sequence[seqIndex]
+        ){
+
+
+          btn.classList.add(
+            "selected"
+          );
+
+
+          btn.disabled =
+            true;
+
+
+          seqIndex++;
+
+
+          document.getElementById(
+            "seqStatus"
+          ).textContent =
+
+            seqIndex === 4
+
+            ? "okayyy ho gaya 😭🌷"
+
+            : "niceee... " +
+              (4 - seqIndex) +
+              " aur baaki 👀";
+
+
+
+          /* Show message */
+
+          if(
+            seqIndex === 4
+          ){
+
+            document.getElementById(
+              "page2msg"
+            ).style.display =
+              "block";
+
+          }
+
+        }
+
+
+        /* Wrong */
+
+        else{
+
+
+          document.getElementById(
+            "seqStatus"
+          ).textContent =
+            "areyyy galat 😂 phir se 🌙 se start karo";
+
+
+          seqIndex = 0;
+
+
+          document
+            .querySelectorAll(
+              ".petal-btn"
+            )
+            .forEach(
+              b => {
+
+                b.classList.remove(
+                  "selected"
+                );
+
+                b.disabled =
+                  false;
+
+              }
+            );
+
+        }
+
+      };
+
+    }
+  );
+
+
+
+/* =========================================
+   PAGE 3 — TAP THE LILY
+========================================= */
+
+
+const target =
+  document.getElementById(
+    "targetLily"
+  );
+
+
+
+target.addEventListener(
+  "click",
+  () => {
+
+
+    document.getElementById(
+      "finalStatus"
+    ).textContent =
+      "pakad liyaaa 😭🌸";
+
+
+    document.getElementById(
+      "finalMessage"
+    ).style.display =
+      "block";
+
+
+    target.style.transform =
+      "scale(1.25)";
+
+
+    target.style.filter =
+      "drop-shadow(0 0 35px rgba(255,143,199,.7))";
+
+  }
+);
+
+</script>
+
+</body>
+</html>
